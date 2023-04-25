@@ -18,6 +18,7 @@
 		color: white;
 		font-size: 1.7em;
 		border-radius: 8em;
+		text-decoration: underline;
 	}
 
 }
@@ -54,15 +55,7 @@ header {
 }
 
 .nav-list li a:hover {
-	animation-name: Hover_enlace;
-	animation-iteration-count: unset;
-	animation-duration: 0.5s;
-	animation-timing-function: ease;
-	font-size: 1.1em;
-	background-color: firebrick;
-	color: white;
-	font-size: 1.7em;
-	border-radius: 8em;
+	animation: Hover_enlace 1s ease forwards;
 }
 
 .abrir-menu,
