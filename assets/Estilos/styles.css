@@ -63,7 +63,6 @@ header {
 .cerrar-menu {
 	display: none;
 }
-
 @media screen and (max-width: 950px) {
 
 	@keyframes Hover_enlace {
