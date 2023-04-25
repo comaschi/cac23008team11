@@ -43,9 +43,11 @@ header {
 	list-style-type: none;
 	display: flex;
 	gap: 1rem;
+	flex-wrap: wrap;
+	justify-items: auto;
 }
 
-.nav-list li a {
+.nav-list div a {
 	font-size: 1.5em;
 	text-decoration: none;
 	color: #1c1c1c;
@@ -54,7 +56,7 @@ header {
 	font-family: 'Lobster', cursive;
 }
 
-.nav-list li a:hover {
+.nav-list div a:hover {
 	animation: Hover_enlace 1s ease forwards;
 }
 
@@ -63,7 +65,8 @@ header {
 	display: none;
 }
 
-@media screen and (max-width: 950px) {
+
+@media screen and (max-width: 660px) {
 
 	.abrir-menu,
 	.cerrar-menu {
