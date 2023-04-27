@@ -16,11 +16,23 @@
 	100% {
 		background-color: firebrick;
 		color: white;
-		font-size: 1.7em;
+		font-size: 1.6em;
 		border-radius: 8em;
 		text-decoration: underline;
 	}
 
+}
+
+@keyframes logoWhatsapp {
+	0% {
+		width: 3em;
+		height: 3em;
+	}
+
+	100% {
+		width: 3.5em;
+		height: 3.5em;
+	}
 }
 
 header {
@@ -31,7 +43,7 @@ header {
 	background: rgb(237, 248, 24);
 	background: linear-gradient(90deg, rgba(237, 248, 24, 1) 44%, rgba(196, 149, 0, 1) 100%);
 	position: sticky;
-	top: 0.2px;
+	top: 0px;
 }
 
 .logo {
@@ -43,6 +55,7 @@ header {
 	list-style-type: none;
 	display: flex;
 	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 .nav-list li a {
@@ -63,13 +76,103 @@ header {
 	display: none;
 }
 
-@media screen and (max-width: 950px) {
+footer {
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	background: rgb(237, 248, 24);
+	background: linear-gradient(90deg, rgba(237, 248, 24, 1) 44%, rgba(196, 149, 0, 1) 100%);
+	padding: 1.5em 3em 0.7em;
+
+}
+
+footer div {
+	display: flex;
+	flex-direction: column;
+	/* border: 1px solid black; */
+	font-family: 'Bebas Neue', cursive;
+}
+
+footer div div {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	font-family: 'Bebas Neue', cursive;
+
+}
+
+.footer-div-2 {
+	display: flex;
+	align-items: center;
+}
+
+.footer-div-3 {
+	display: flex;
+	align-items: end;
+}
+
+.footer-div-img-1 {
+	"
+ width: 2em;
+	height: 2em;
+}
+
+.footer-div-img-3 {
+	width: 3em;
+	height: 3em;
+}
+
+#Whatsapp:hover {
+	animation: logoWhatsapp 0.8s ease forwards;
+}
+
+main {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-image: url("/assets/Imagenes/4K-Restaurant.jpg");
+	background-repeat: no-repeat;
+	height: 50em;
+}
+
+main div>p {
+	color: wheat;
+	font-family: 'Dancing Script', cursive;
+	font-size: 2.5em;
+}
+
+main div>p::first-letter {
+	font-size: 3em;
+}
+
+main:nth-child(2) {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-content: center;
+	align-items: center;
+}
+
+@media screen and (max-width: 660px) {
+
+	@keyframes Hover_enlace {
+		0% {
+			text-decoration: none;
+			color: #1c1c1c;
+			font-weight: bold;
+		}
+
+		100% {
+			background-color: firebrick;
+			color: white;
+			border-radius: 8em;
+			text-decoration: underline;
+		}
+
+	}
 
 	.abrir-menu,
 	.cerrar-menu {
 		display: block;
 		border: 0;
-		font-size: 1.25rem;
+		font-size: 2rem;
 		background-color: transparent;
 		cursor: pointer;
 	}
@@ -92,10 +195,11 @@ header {
 		position: absolute;
 		top: 0;
 		right: 0;
-		bottom: 0;
+		font-size: 0.8rem;
 		background-color: #1c1c1c;
 		padding: 2rem;
 		box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+		height: 100vh;
 	}
 
 	.nav.visible {
@@ -110,5 +214,11 @@ header {
 
 	.nav-list li a {
 		color: #ecececec;
+	}
+
+	#footer-div1,
+	#footer-div3,
+	#footer-div2 {
+		display: none;
 	}
 }
