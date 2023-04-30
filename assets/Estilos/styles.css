@@ -7,11 +7,6 @@
 
 /* Animación de hover en enlaces */
 @keyframes Hover_enlace {
-	0% {
-		text-decoration: none;
-		color: #1c1c1c;
-		font-weight: bold;
-	}
 
 	100% {
 		background-color: firebrick;
@@ -30,25 +25,39 @@
 	}
 
 	100% {
-		width: 3.5em;
-		height: 3.5em;
+		width: 3.2em;
+		height: 3.3em;
 	}
 }
 
+body {
+	display: grid;
+	grid-template: auto auto auto / 1fr 1fr;
+	grid-template-areas: "header header"
+		"section1 section1"
+		"section2 section2"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+
+
+}
+
 header {
+	grid-area: header;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem;
 	background: rgb(237, 248, 24);
 	background: linear-gradient(90deg, rgba(237, 248, 24, 1) 44%, rgba(196, 149, 0, 1) 100%);
+	background-repeat: no-repeat;
 	position: sticky;
 	top: 0px;
 }
 
 .logo {
-	width: 180px;
-	height: 180px;
+	width: 15vw;
+	height: 15vw;
 }
 
 .nav-list {
@@ -71,12 +80,70 @@ header {
 	animation: Hover_enlace 1s ease forwards;
 }
 
+.section1 {
+	grid-area: section1;
+	padding: 1em;
+}
+
+.section1>article>p {
+	font-family: 'Dancing Script', cursive;
+	font-size: 2.5em;
+	color: #cfca85ec;
+	text-align: center;
+}
+
+.section1>article>:first-child::first-letter {
+	font-size: 3em;
+}
+
+.section2 {
+	grid-area: section2;
+	padding: 4em;
+	display: flex;
+	justify-content: center;
+}
+
+.section2>article>div {
+	color: wheat;
+	display: flex;
+	flex-direction: column;
+	gap: 0.7em;
+	align-items: center;
+}
+
+.reserva-index {
+	font-family: 'Bebas Neue', cursive;
+	font-size: 2em;
+}
+
+.flecha {
+	font-size: 3.5em;
+}
+
+.btn-reserva {
+	font-size: 1.5em;
+	font-family: 'Bebas Neue', cursive;
+	font-weight: bold;
+	border: 0.2em;
+	border-style: groove;
+	border-radius: 5em;
+	padding: 0.5em;
+	background-color: rgb(213, 231, 53);
+	cursor: pointer;
+}
+
+.btn-reserva:hover {
+	background-color: rgb(9, 71, 9);
+	color: wheat;
+}
+
 .abrir-menu,
 .cerrar-menu {
 	display: none;
 }
 
 footer {
+	grid-area: footer;
 	display: grid;
 	grid-template-columns: 1fr 5fr 1fr;
 	background: rgb(237, 248, 24);
@@ -111,8 +178,7 @@ footer div div {
 }
 
 .footer-div-img-1 {
-	"
- width: 2em;
+	width: 2em;
 	height: 2em;
 }
 
@@ -123,31 +189,6 @@ footer div div {
 
 #Whatsapp:hover {
 	animation: logoWhatsapp 0.8s ease forwards;
-}
-
-main {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	background-image: url("/assets/Imagenes/4K-Restaurant.jpg");
-	background-repeat: no-repeat;
-	height: 50em;
-}
-
-main div>p {
-	color: wheat;
-	font-family: 'Dancing Script', cursive;
-	font-size: 2.5em;
-}
-
-main div>p::first-letter {
-	font-size: 3em;
-}
-
-main:nth-child(2) {
-	display: grid;
-	grid-template-columns: 1fr;
-	justify-content: center;
-	align-items: center;
 }
 
 @media screen and (max-width: 660px) {
