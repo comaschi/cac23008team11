@@ -1,15 +1,24 @@
+/* Importación de fuentes */
+/* Lobster */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+/* Bebas Neue */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* Courgette */
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+/* Box sizing, border box */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
 }
 
-/* Animación de hover en enlaces */
+/* Animaciones */
 @keyframes Hover_enlace {
 
 	100% {
-		background-color: firebrick;
+		background-color: rgba(114, 50, 13, 0.562);
 		color: white;
 		font-size: 1.6em;
 		border-radius: 8em;
@@ -30,33 +39,21 @@
 	}
 }
 
-body {
-	display: grid;
-	grid-template: auto auto auto auto / 1fr 1fr;
-	grid-template-areas: "header header"
-		"section1 section1"
-		"section2 section2"
-		"footer footer";
-	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
-	background-repeat: no-repeat;
-}
-
+/* Estilos de header y footer*/
 header {
 	grid-area: header;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem;
-	background: rgb(237, 248, 24);
-	background: linear-gradient(90deg, rgba(237, 248, 24, 1) 44%, rgba(196, 149, 0, 1) 100%);
-	background-repeat: no-repeat;
+	background: linear-gradient(135deg, #996227, #b87f5f);
 	position: sticky;
 	top: 0px;
 }
 
 .logo {
-	width: 15vw;
-	height: 15vw;
+	width: 11vw;
+	height: 11vw;
 }
 
 .nav-list {
@@ -76,16 +73,75 @@ header {
 }
 
 .nav-list li a:hover {
-	animation: Hover_enlace 1s ease forwards;
+	animation: Hover_enlace 0.3s ease forwards;
+}
+
+footer {
+	grid-area: footer;
+	display: grid;
+	grid-template-columns: 1fr 5fr 1fr;
+	background: linear-gradient(135deg, #9c682f, #af8865);
+	padding: 1.5em 3em 0.7em;
+
+}
+
+footer div {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Bebas Neue', cursive;
+}
+
+footer div div {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	font-family: 'Bebas Neue', cursive;
+
+}
+
+.footer-div-2 {
+	display: flex;
+	align-items: center;
+}
+
+.footer-div-3 {
+	display: flex;
+	align-items: end;
+}
+
+.footer-div-img-1 {
+	width: 2em;
+	height: 2em;
+}
+
+.footer-div-img-3 {
+	width: 3em;
+	height: 3em;
+}
+
+#Whatsapp:hover {
+	animation: logoWhatsapp 0.8s ease forwards;
+}
+
+/* Estilos de la página "index.html */
+body {
+	display: grid;
+	grid-template: auto auto auto auto / 1fr 1fr;
+	grid-template-areas: "header header"
+		"section1 section1"
+		"section2 section2"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-repeat: no-repeat;
 }
 
 .h1-index {
 	text-align: center;
 	text-decoration: underline;
-	font-family: 'Dancing Script', cursive;
-	font-weight: bold;
+	font-family: 'Courgette', cursive;
+	font-weight: 700;
 	color: #cfca85ec;
-	font-size: 4em;
+	font-size: 3em;
 }
 
 .section1 {
@@ -94,16 +150,13 @@ header {
 }
 
 .section1>article>p {
-	font-family: 'Dancing Script', cursive;
-	font-size: 2.5em;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	font-size: 2.2em;
 	color: #cfca85ec;
 	text-align: center;
-	background-color: #552b07bd;
+	background-color: #552b0785;
 	border-radius: 0.4em;
-}
-
-.section1>article>:nth-child(2):first-letter {
-	font-size: 3em;
 }
 
 .section2 {
@@ -152,60 +205,7 @@ header {
 	display: none;
 }
 
-footer {
-	grid-area: footer;
-	display: grid;
-	grid-template-columns: 1fr 5fr 1fr;
-	background: rgb(237, 248, 24);
-	background: linear-gradient(90deg, rgba(237, 248, 24, 1) 44%, rgba(196, 149, 0, 1) 100%);
-	padding: 1.5em 3em 0.7em;
-
-}
-
-footer div {
-	display: flex;
-	flex-direction: column;
-	/* border: 1px solid black; */
-	font-family: 'Bebas Neue', cursive;
-}
-
-footer div div {
-	display: flex;
-	flex-direction: row;
-	gap: 1em;
-	font-family: 'Bebas Neue', cursive;
-
-}
-
-.footer-div-2 {
-	display: flex;
-	align-items: center;
-}
-
-.footer-div-3 {
-	display: flex;
-	align-items: end;
-}
-
-.footer-div-img-1 {
-	width: 2em;
-	height: 2em;
-}
-
-.footer-div-img-3 {
-	width: 3em;
-	height: 3em;
-}
-
-#Whatsapp:hover {
-	animation: logoWhatsapp 0.8s ease forwards;
-}
-
-
 /*Estilos para la página "contacto.html*/
-/*Importación de fuentes de google fonts*/
-@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
-
 .body-forms {
 	display: grid;
 	grid-template: auto auto auto / 1fr 1fr;
@@ -224,8 +224,8 @@ footer div div {
 	grid-area: form2;
 }
 
-
 .contact_form {
+	font-family: 'Noto Sans', sans-serif;
 	width: 34.67vw;
 	height: auto;
 	margin: 0.73vw auto;
@@ -234,6 +234,7 @@ footer div div {
 	padding-bottom: 1.46vw;
 	background-color: #fbfbfb;
 	padding-left: 2.19vw;
+	padding-right: 2.19vw;
 }
 
 input {
@@ -249,7 +250,6 @@ input {
 	margin-bottom: 1.46vw;
 }
 
-
 textarea {
 	background-color: #fbfbfb;
 	width: 29.64vw;
@@ -264,12 +264,11 @@ textarea {
 	padding-top: 1.09vw;
 }
 
-
 label {
+	font-weight: 800;
 	display: block;
 	float: center;
 }
-
 
 .button-reserva {
 	height: 3.29vw;
@@ -286,22 +285,18 @@ label {
 	cursor: pointer;
 }
 
-
 button p {
 	color: #fff;
 }
-
 
 span {
 	color: #582900;
 }
 
-
 .aviso {
 	font-size: 0.95vw;
 	color: #0e0e0e;
 }
-
 
 h1 {
 	font-size: 2.85vw;
@@ -310,35 +305,29 @@ h1 {
 	color: #582900;
 }
 
-
 h3 {
 	font-size: 1.46vw;
 	padding-bottom: 2.19vw;
 	color: #0e0e0e;
 }
 
-
 p {
 	font-size: 1.02vw;
 	color: #582900;
 }
 
-
 ::-webkit-input-placeholder {
 	color: #a8a8a8;
 }
-
 
 ::-webkit-textarea-placeholder {
 	color: #a8a8a8;
 }
 
-
 .formulario input:focus {
 	outline: 0;
 	border: 0.07vw solid #97d848;
 }
-
 
 .formulario textarea:focus {
 	outline: 0;
@@ -367,10 +356,11 @@ p {
 }
 
 .section1-dondeestamos>article>p {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
 	color: wheat;
 	font-size: 2em;
-	text-align: justify;
+	text-align: center;
 	background-color: #552b07bd;
 	padding: 0.4em;
 	border-radius: 1em;
@@ -399,7 +389,8 @@ iframe {
 }
 
 .section3-dondeestamos>article>p {
-	font-family: 'Dancing Script', cursive;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
 	color: wheat;
 	font-size: 2em;
 	text-align: justify;
@@ -416,6 +407,184 @@ iframe {
 	margin: 2em;
 }
 
+/* Estilos para la página "el_restaurante" */
+
+.body-elrestaurante {
+	display: grid;
+	grid-template: repeat(auto, 8)/repeat(1fr, 2);
+	grid-template-areas: "header header"
+		"section1 section2"
+		"section3 section4"
+		"section5 section6"
+		"section7 section8"
+		"section9 section10"
+		"section11 section11"
+		"footer footer";
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
+	background-repeat: repeat;
+}
+
+.section1-elrestaurante {
+	grid-area: section1;
+}
+
+.section1-elrestaurante>article>p {
+	grid-area: section1;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 1.5em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section2-elrestaurante {
+	grid-area: section2;
+	display: flex;
+	justify-content: center;
+}
+
+.section2-elrestaurante img {
+	border-radius: 1em;
+	margin: 1em;
+
+}
+
+.section3-elrestaurante {
+	grid-area: section3;
+	display: flex;
+	justify-content: center;
+}
+
+.section3-elrestaurante img {
+	border-radius: 1em;
+	margin: 1em;
+
+}
+
+.section4-elrestaurante {
+	grid-area: section4;
+}
+
+.section4-elrestaurante>article>p {
+	grid-area: section4;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 1.5em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section5-elrestaurante {
+	grid-area: section5;
+}
+
+.section5-elrestaurante>article>p {
+	grid-area: section5;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 1.5em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section6-elrestaurante {
+	grid-area: section6;
+	display: flex;
+	justify-content: center;
+}
+
+.section6-elrestaurante img {
+	border-radius: 1em;
+	margin: 1em;
+}
+
+.section7-elrestaurante {
+	grid-area: section7;
+	display: flex;
+	justify-content: center;
+}
+
+.section7-elrestaurante img {
+	border-radius: 1em;
+	margin: 1em;
+
+}
+
+.section8-elrestaurante {
+	grid-area: section8;
+}
+
+.section8-elrestaurante>article>p {
+	grid-area: section8;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 1.5em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section9-elrestaurante {
+	grid-area: section9;
+}
+
+.section9-elrestaurante>article>p {
+	grid-area: section9;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 1.5em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #552b0793;
+	border-radius: 2em;
+}
+
+.section10-elrestaurante {
+	grid-area: section10;
+	display: flex;
+	justify-content: center;
+}
+
+.section10-elrestaurante img {
+	border-radius: 1em;
+	margin: 1em;
+}
+
+.section11-elrestaurante {
+	grid-area: section11;
+}
+
+.section11-elrestaurante>article>p {
+	grid-area: section11;
+	font-family: 'Courgette', cursive;
+	font-weight: 400;
+	color: wheat;
+	font-size: 2em;
+	text-align: justify;
+	padding: 0.8em;
+	margin: 1em;
+	background-color: #2c2c0cab;
+	border-radius: 2em;
+}
+
+/* Punto de corte 660px */
 @media screen and (max-width: 660px) {
 
 	@keyframes Hover_enlace {
