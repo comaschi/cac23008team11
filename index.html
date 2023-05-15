@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/assets/Estilos/styles.css">
     <script src="/assets/Js/main.js"></script>
+    <script src="/assets/Js/api_clima.js"></script>
     <title>Fuegos Patagónicos</title>
 </head>
 
@@ -17,15 +18,24 @@
         <img class="logo" src="/assets/Imagenes/5.png" alt="Logo">
         <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
         <nav class="nav" id="nav">
-            <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle-fill"></i></button>
-            <ul class="nav-list">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="el_restaurante.html">El restaurante</a></li>
-                <li><a href="donde_estamos.html">¿Dónde estamos?</a></li>
-                <li><a href="la_carta.html">La carta</a></li>
-                <li><a href="contactos.html">Contacto - Reservas</a></li>
-            </ul>
+            <div id="API-clima">
+                <div class="container">
+                    <div class="temp">°C</div>
+                    <div class="summary">----</div>
+                    <div class="location"></div>
+                </div>
+            </div>
+            <div>
+                <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle-fill"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="el_restaurante.html">El restaurante</a></li>
+                    <li><a href="donde_estamos.html">¿Dónde estamos?</a></li>
+                    <li><a href="la_carta.html">La carta</a></li>
+                    <li><a href="contactos.html">Contacto - Reservas</a></li>
+                </ul>
         </nav>
+        </div>
     </header>
     <section class="section1">
         <article>
@@ -60,6 +70,7 @@
         </div>
     </footer>
     <script src="assets/Js/main.js"></script>
+    <script src="/assets/Js/api_clima.js"></script>
 </body>
 
 </html>

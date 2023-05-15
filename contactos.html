@@ -22,7 +22,7 @@
         <script> header()</script>
     </header>
     <section class="form-1">
-        <div>
+        <div id="appFormContacto">
             <!-- Formulario de contacto  -->
 
             <div class="contact_form">
@@ -36,15 +36,15 @@
 
 
                         <p>
-                            <label for="nombre" class="colocar_nombre">Nombre
+                            <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio"
-                                placeholder="Escribe tu nombre">
+                            <input v-model="nombre" v-bind:class="clase" @keyup.tab="validacionNombre" type="text"
+                                name="introducir_nombre" required="obligatorio" placeholder="Escribe tu nombre">
                         </p>
 
                         <p>
-                            <label for="email" class="colocar_email">Email
+                            <label for="email">Email
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="email" name="introducir_email" id="email" required="obligatorio"
@@ -52,14 +52,14 @@
                         </p>
 
                         <p>
-                            <label for="telefono" class="colocar_telefono">Teléfono
+                            <label for="telefono">Teléfono
                             </label>
                             <input type="tel" name="introducir_telefono" id="telefono"
                                 placeholder="Escribe tu n° de teléfono">
                         </p>
 
                         <p>
-                            <label for="asunto" class="colocar_asunto">Asunto
+                            <label for="asunto">Asunto
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="text" name="introducir_asunto" id="asunto" required="obligatorio"
@@ -67,11 +67,11 @@
                         </p>
 
                         <p>
-                            <label for="mensaje" class="colocar_mensaje">Mensaje
+                            <label for="mensaje">Mensaje
                                 <span class="obligatorio">*</span>
                             </label>
-                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje"
-                                required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea>
+                            <textarea name="introducir_mensaje" id="mensaje" required="obligatorio"
+                                placeholder="Deja aquí tu comentario..."></textarea>
                         </p>
 
                         <button class="button-reserva" type="submit" value="Enviar" id="enviar">
@@ -102,7 +102,7 @@
 
 
                         <p>
-                            <label for="fecha" class="colocar_nombre">Fecha
+                            <label for="fecha">Fecha
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="date" name="introducir_fecha" id="fecha-r" required="obligatorio"
@@ -110,7 +110,7 @@
                         </p>
 
                         <p>
-                            <label for="nombre" class="colocar_nombre">Nombre
+                            <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="text" name="introducir_nombre" id="nombre-r" required="obligatorio"
@@ -118,7 +118,7 @@
                         </p>
 
                         <p>
-                            <label for="email" class="colocar_email">Email
+                            <label for="email">Email
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="email" name="introducir_email" id="email-r" required="obligatorio"
@@ -126,7 +126,7 @@
                         </p>
 
                         <p>
-                            <label for="telefono" class="colocar_telefono">Teléfono
+                            <label for="telefono">Teléfono
                                 <span class="obligatorio">*</span>
                             </label>
                             </label>
@@ -135,7 +135,7 @@
                         </p>
 
                         <p>
-                            <label for="cantidad" class="colocar_asunto">Cantidad de personas
+                            <label for="cantidad">Cantidad de personas
                                 <span class="obligatorio">*</span>
                             </label>
                             <input type="number" name="introducir_cantidad" id="cantidad-r" required="obligatorio"
@@ -143,7 +143,7 @@
                         </p>
 
                         <p>
-                            <label for="peticion" class="colocar_mensaje">Petición especial
+                            <label for="peticion">Petición especial
                             </label>
                             <textarea name="introducir_petición" class="texto_mensaje" id="peticion-r"
                                 placeholder="Deja aquí tu petición especial si tenés..."></textarea>
@@ -167,6 +167,7 @@
     <footer>
         <script> footer()</script>
     </footer>
+    <script src="https://unpkg.com/vue@next"></script>
     <script src="assets/Js/main.js"></script>
 </body>
 
