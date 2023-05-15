@@ -56,6 +56,19 @@ header {
 	height: 11vw;
 }
 
+nav {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 1em;
+}
+
+#API-clima {
+	display: flex;
+	justify-content: end;
+	font-weight: bold;
+}
+
 .nav-list {
 	list-style-type: none;
 	display: flex;
@@ -235,6 +248,12 @@ body {
 	background-color: #fbfbfb;
 	padding-left: 2.19vw;
 	padding-right: 2.19vw;
+}
+
+.nombre-falso {
+	border: 1vw solid red;
+	background-color: rgba(255, 0, 0, 0.233);
+	color: red;
 }
 
 input {

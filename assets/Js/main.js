@@ -33,7 +33,7 @@ function validacionContacto() {
         return false;
     }
     //Validación de caracteres del nombre
-    for (var i = 0; i < contactoNombre.length; i++) {
+    for (let i = 0; i < contactoNombre.length; i++) {
         let charCode = contactoNombre.charCodeAt(i);
         if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
             alert("El campo 'Nombre' solo puede contener caracteres alfabéticos y espacios.");
@@ -41,7 +41,7 @@ function validacionContacto() {
         }
     }
     //Validación de que el campo "Teléfono" sean sólo números
-    for (var i = 0; i < contactoTelefono.length; i++) {
+    for (let i = 0; i < contactoTelefono.length; i++) {
         let charCode = contactoTelefono.charCodeAt(i);
         if (!(charCode >= 48 && charCode <= 57)) {
             alert("El campo 'Teléfono' solo puede contener caracteres numéricos.");
@@ -65,7 +65,7 @@ function validacionReserva() {
         return false;
     }
     //Validación de caracteres del nombre
-    for (var i = 0; i < reservaNombre.length; i++) {
+    for (let i = 0; i < reservaNombre.length; i++) {
         let charCode = reservaNombre.charCodeAt(i);
         if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
             alert("El campo 'Nombre' solo puede contener caracteres alfabéticos y espacios.");
@@ -73,7 +73,7 @@ function validacionReserva() {
         }
     }
     //Validación de que el campo "Teléfono" sean sólo números
-    for (var i = 0; i < reservaTelefono.length; i++) {
+    for (let i = 0; i < reservaTelefono.length; i++) {
         let charCode = reservaTelefono.charCodeAt(i);
         if (!(charCode >= 48 && charCode <= 57)) {
             alert("El campo 'Teléfono' solo puede contener caracteres numéricos.");
@@ -86,3 +86,23 @@ function validacionReserva() {
         return false
     }
 }
+// Validación del formulario en tiempo real con VUE.js
+const { createApp } = Vue
+const appFormContacto = createApp({
+    // Datos de la aplicacion
+    data() {
+        return {
+            nombre: null,//Se obtiene con v-model.
+            clase: null//Se asigna con v-bind.
+        }
+    },
+    methods: {
+        validacionNombre () {
+            for (let i = 0; i < (this.nombre).length; i++) {
+                let charCode = (this.nombre).charCodeAt(i);
+                if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
+            this.clase = "nombre-falso"
+        }}  
+}
+}})
+appFormContacto.mount("#appFormContacto")
