@@ -10,7 +10,7 @@
         <script src="https://kit.fontawesome.com/2cfe264d44.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
         <link rel="stylesheet" href="/assets/Estilos/styles.css">
-        <script src="/assets/Js/main.js"></script>
+        <script src="/assets/Js/main.js" defer></script>
         <title>Contacto - Reservas</title>
     </head>
 
@@ -19,10 +19,30 @@
 <body class="body-forms">
 
     <header>
-        <script> header()</script>
+        <img class="logo" src="/assets/Imagenes/5.png" alt="Logo">
+        <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav">
+            <div id="API-clima">
+                <div class="container">
+                    <div class="temp">°C</div>
+                    <div class="summary">----</div>
+                    <div class="location"></div>
+                </div>
+            </div>
+            <div>
+                <button id="cerrar" class="cerrar-menu"><i class="bi bi-x-circle-fill"></i></button>
+                <ul class="nav-list">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="el_restaurante.html">El restaurante</a></li>
+                    <li><a href="donde_estamos.html">¿Dónde estamos?</a></li>
+                    <li><a href="la_carta.html">La carta</a></li>
+                    <li><a href="contactos.html">Contacto - Reservas</a></li>
+                </ul>
+        </nav>
+        </div>
     </header>
     <section class="form-1">
-        <div id="appFormContacto">
+        <div id="app">
             <!-- Formulario de contacto  -->
 
             <div class="contact_form">
@@ -39,7 +59,7 @@
                             <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input v-model="nombre" v-bind:class="clase" @keyup.tab="validacionNombre" type="text"
+                            <input v-model="nombre" v-bind:class="clase" @keyup.enter="validacionNombre" type="text"
                                 name="introducir_nombre" required="obligatorio" placeholder="Escribe tu nombre">
                         </p>
 
@@ -165,10 +185,21 @@
         </div>
     </section>
     <footer>
-        <script> footer()</script>
+        <div>
+            <div id="footer-div1">Seguinos en nuestras redes</div>
+            <div><a href=""><img class="footer-div-img-1" src="/assets/Imagenes/Logo de Instagram.png" alt=""></a><a
+                    href=""><img class="footer-div-img-1" src="/assets/Imagenes/Logo Linkedin.png" alt=""></a><img
+                    class="footer-div-img-1" src="/assets/Imagenes/Logo de Facebook.png" alt=""></a></div>
+        </div>
+        <div id="footer-div2" class="footer-div-2">Todos los derechos reservados - 2023</div>
+        <div class="footer-div-3">
+            <div id="footer-div3">Chateá con nosotros</div>
+            <div><a><img id="Whatsapp" src="/assets/Imagenes/Ícono de Whatsapp.png" alt=""></a></div>
+        </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="assets/Js/main.js"></script>
+    <script src="/assets/Js/validacion.js"></script>
+ 
 </body>
 
 </html>
