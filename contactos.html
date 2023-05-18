@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="body-forms">
+<body class="body-forms" id="app">
 
     <header>
         <img class="logo" src="/assets/Imagenes/5.png" alt="Logo">
@@ -42,13 +42,13 @@
                     <li><a href="el_restaurante.html">El restaurante</a></li>
                     <li><a href="donde_estamos.html">¿Dónde estamos?</a></li>
                     <li><a href="la_carta.html">La carta</a></li>
-                    <li><a href="contactos.html">Contacto - Reservas</a></li>
+                    <li><a class="paginaSeleccionada" href="contactos.html">Contacto - Reservas</a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <section class="form-1">
-        <div id="app">
+        <div>
             <!-- Formulario de contacto  -->
 
             <div class="contact_form">
@@ -65,7 +65,8 @@
                             <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input v-model="nombre" v-bind:class="clase" @keyup.enter="validacionNombre" type="text"
+                            <input v-model="nombre" v-bind:class="clase" @keydown.tab="validacionNombre"
+                                @click="restablecimientoNombre" @select="restablecimientoNombre" type="text"
                                 name="introducir_nombre" required="obligatorio" placeholder="Escribe tu nombre">
                         </p>
 
@@ -73,15 +74,18 @@
                             <label for="email">Email
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="email" name="introducir_email" id="email" required="obligatorio"
+                            <input v-model="correo" v-bind:class="claseCorreo" @keydown.tab="validacionCorreo"
+                                @click="restablecimientoCorreo" @select="restablecimientoCorreo" type="email"
+                                name="introducir_email" id="email" required="obligatorio"
                                 placeholder="Escribe tu dirección de correo electrónico">
                         </p>
 
                         <p>
                             <label for="telefono">Teléfono
                             </label>
-                            <input type="tel" name="introducir_telefono" id="telefono"
-                                placeholder="Escribe tu n° de teléfono">
+                            <input v-model="telefono" v-bind:class="claseTelefono" @keydown.tab="validacionTelefono"
+                                @click="restablecimientoTelefono" @select="restablecimientoTelefono" type="tel"
+                                name="introducir_telefono" id="telefono" placeholder="Escribe tu n° de teléfono">
                         </p>
 
                         <p>
@@ -112,7 +116,6 @@
                 </div>
             </div>
 
-
         </div>
     </section>
     <section class="form-2">
@@ -139,15 +142,18 @@
                             <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="text" name="introducir_nombre" id="nombre-r" required="obligatorio"
-                                placeholder="Escribe tu nombre">
+                            <input v-model="nombreR" v-bind:class="claseR" @keydown.tab="validacionNombreR"
+                                @click="restablecimientoNombreR" @select="restablecimientoNombreR" type="text"
+                                name="introducir_nombre" required="obligatorio" placeholder="Escribe tu nombre">
                         </p>
 
                         <p>
                             <label for="email">Email
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input type="email" name="introducir_email" id="email-r" required="obligatorio"
+                            <input v-model="correoR" v-bind:class="claseCorreoR" @keydown.tab="validacionCorreoR"
+                                @click="restablecimientoCorreoR" @select="restablecimientoCorreoR" type="email"
+                                name="introducir_email" id="email" required="obligatorio"
                                 placeholder="Escribe tu dirección de correo electrónico">
                         </p>
 
@@ -156,8 +162,9 @@
                                 <span class="obligatorio">*</span>
                             </label>
                             </label>
-                            <input type="tel" name="introducir_telefono" id="telefono-r" required="obligatorio"
-                                placeholder="Escribe tu n° de teléfono">
+                            <input v-model="telefonoR" v-bind:class="claseTelefonoR" @keydown.tab="validacionTelefonoR"
+                                @click="restablecimientoTelefonoR" @select="restablecimientoTelefonoR" type="tel"
+                                name="introducir_telefono" id="telefono" placeholder="Escribe tu n° de teléfono">
                         </p>
 
                         <p>
@@ -204,7 +211,7 @@
         </div>
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
-    <script src="/assets/Js/validacion.js"></script>
+    <script src="/assets/Js/validaciones.js"></script>
     <script src="/assets/Js/main.js" defer></script>
     <script src="/assets/Js/api_clima.js"></script>
     <script src="/assets/Js/componentes.js"></script>

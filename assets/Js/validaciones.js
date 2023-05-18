@@ -1,4 +1,4 @@
-//--------------Validación del formulario de contacto.--------------
+//--------------Validación del formulario de contacto ON SUBMIT.--------------
 function validacionContacto() {
 
     var contactoNombre = document.getElementById("nombre").value.trim()
@@ -30,7 +30,7 @@ function validacionContacto() {
         }
     }
 }
-//--------------Validación del formulario de reserva.--------------
+//--------------Validación del formulario de reserva ON SUBMIT.--------------
 function validacionReserva() {
 
     var reservaNombre = document.getElementById("nombre-r").value.trim()
@@ -68,14 +68,24 @@ function validacionReserva() {
     }
 }
 
-// Validación del formulario en tiempo real con VUE.js
+// Validación del formulario EN TIEMPO REAL con VUE.js
 const { createApp } = Vue
 const appFormContacto = createApp({
     // Datos de la aplicacion
     data() {
         return {
             nombre: null,//Se obtiene con v-model.
-            clase: null//Se asigna con v-bind.
+            clase: null,//Se asigna con v-bind.
+            correo: null,//Se obtiene con v-model.
+            claseCorreo: null,//Se asigna con v-bind.
+            telefono: null,//Se obtiene con v-model.
+            claseTelefono: null,//Se asigna con v-bind.
+            nombreR: null,//Se obtiene con v-model.
+            claseR: null,//Se asigna con v-bind.
+            correoR: null,//Se obtiene con v-model.
+            claseCorreoR: null,//Se asigna con v-bind.
+            telefonoR: null,//Se obtiene con v-model.
+            claseTelefonoR: null//Se asigna con v-bind.
         }
     },
     methods: {
@@ -84,10 +94,77 @@ const appFormContacto = createApp({
                 let charCode = (this.nombre).charCodeAt(i);
                 if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
                     this.clase = "nombre-falso"
-
+                    this.nombre = "El nombre no debe contener caracteres especiales ni numéricos"
                 }
             }
+        },
+        restablecimientoNombre() {
+            this.nombre = null
+            this.clase = null
+        },
+        validacionCorreo() {
+            let validCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+            if (!(validCorreo.test((this.correo).value))) {
+                this.claseCorreo = "nombre-falso"
+                this.correo = "Por favor introduzca una dirección de correo electrónico válida"
+            }
+        },
+        restablecimientoCorreo() {
+            this.correo = null
+            this.claseCorreo = null
+        },
+        validacionTelefono() {
+            for (let i = 0; i < (this.telefono).length; i++) {
+                let charCode = (this.telefono).charCodeAt(i);
+                if (!(charCode >= 48 && charCode <= 57)) {
+                    this.claseTelefono = "nombre-falso"
+                    this.telefono = "El teléfono debe contener únicamente caracteres numéricos"
+                }
+            }
+        },
+        restablecimientoTelefono() {
+            this.telefono = null
+            this.claseTelefono = null
+        },
+        validacionNombreR() {
+            for (let i = 0; i < (this.nombreR).length; i++) {
+                let charCode = (this.nombreR).charCodeAt(i);
+                if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
+                    this.claseR = "nombre-falso"
+                    this.nombreR = "El nombre no debe contener caracteres especiales ni numéricos"
+                }
+            }
+        },
+        restablecimientoNombreR() {
+            this.nombreR = null
+            this.claseR = null
+        },
+        validacionCorreoR() {
+            let validCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+            if (!(validCorreo.test((this.correoR).value))) {
+                this.claseCorreoR = "nombre-falso"
+                this.correoR = "Por favor introduzca una dirección de correo electrónico válida"
+            }
+        },
+        restablecimientoCorreoR() {
+            this.correoR = null
+            this.claseCorreoR = null
+        },
+        validacionTelefonoR() {
+            for (let i = 0; i < (this.telefonoR).length; i++) {
+                let charCode = (this.telefonoR).charCodeAt(i);
+                if (!(charCode >= 48 && charCode <= 57)) {
+                    this.claseTelefonoR = "nombre-falso"
+                    this.telefonoR = "El teléfono debe contener únicamente caracteres numéricos"
+                }
+            }
+        },
+        restablecimientoTelefonoR() {
+            this.telefonoR = null
+            this.claseTelefonoR = null
         }
+
     }
-})
+}
+)
 appFormContacto.mount("#app")

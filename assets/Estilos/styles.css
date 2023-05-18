@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 /* Courgette */
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+/* Noto Sans */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
 /* Box sizing, border box */
@@ -64,10 +65,24 @@ nav {
 	gap: 1em;
 }
 
+.paginaSeleccionada {
+	background-color: #5829002d;
+	border-radius: 0.5em;
+
+}
+
 .clima {
 	display: flex;
 	flex-direction: row;
 	justify-content: end;
+	align-self: flex-end;
+	font-family: Bebas Neue;
+	font-size: 1em;
+	font-weight: 700;
+	background-color: #a0672771;
+	width: 13.8em;
+	padding: 0.3em 0.5em 0.3em 0em;
+	border-radius: 1em;
 }
 
 .img-clima {
@@ -79,7 +94,6 @@ nav {
 #API-clima {
 	display: flex;
 	justify-content: end;
-	font-weight: bold;
 }
 
 .nav-list {
@@ -264,9 +278,10 @@ body {
 }
 
 .nombre-falso {
-	border: 1vw solid red;
+	border: 0.2vw solid red;
 	background-color: rgba(255, 0, 0, 0.233);
-	color: red;
+	color: rgba(255, 0, 0, 0.589);
+	font-weight: 500;
 }
 
 input {
