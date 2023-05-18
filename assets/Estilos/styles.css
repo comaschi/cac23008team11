@@ -671,6 +671,10 @@ iframe {
 		color: #ececec;
 	}
 
+	.paginaSeleccionada {
+		background-color: #97d84850;
+	}
+
 	.nav {
 		opacity: 0;
 		visibility: hidden;
@@ -706,6 +710,44 @@ iframe {
 	#footer-div3,
 	#footer-div2 {
 		display: none;
+	}
+
+	.body-elrestaurante {
+		grid-template: repeat(auto, 13)/ repeat(2, 1fr);
+		grid-template-areas: "header header"
+			"section1 section1"
+			"section2 section2"
+			"section4 section4"
+			"section3 section3"
+			"section5 section5"
+			"section6 section6"
+			"section8 section8"
+			"section7 section7"
+			"section9 section9"
+			"section10 section10"
+			"section11 section11"
+			"footer footer";
+	}
+
+	.body-dondeestamos {
+		grid-template: repeat(auto, 6) / repeat(1fr, 2);
+		grid-template-areas: "header header"
+			"section1 section1"
+			"section2 section2"
+			"section3 section3"
+			"section4 section4"
+			"footer footer";
+	}
+
+	.fa-solid {
+		display: none;
+	}
+
+	iframe {
+		width: 30em;
+		height: 20em;
+		border-radius: 3em;
+		border: 0.4em groove rgba(187, 187, 32, 0.767);
 	}
 
 	.body-forms {
