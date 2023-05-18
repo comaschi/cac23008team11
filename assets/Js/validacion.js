@@ -79,13 +79,15 @@ const appFormContacto = createApp({
         }
     },
     methods: {
-        validacionNombre () {
+        validacionNombre() {
             for (let i = 0; i < (this.nombre).length; i++) {
                 let charCode = (this.nombre).charCodeAt(i);
                 if (!((charCode >= 65 && charCode <= 90) || (charCode >= 97 && charCode <= 122) || charCode === 32)) {
-            this.clase = "nombre-falso"
-            
-        }}  
-}
-}})
+                    this.clase = "nombre-falso"
+
+                }
+            }
+        }
+    }
+})
 appFormContacto.mount("#app")

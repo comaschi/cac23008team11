@@ -45,7 +45,7 @@ header {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem;
+	padding: 1rem 1rem 1rem 1rem;
 	background: linear-gradient(135deg, #996227, #b87f5f);
 	position: sticky;
 	top: 0px;
@@ -57,10 +57,23 @@ header {
 }
 
 nav {
+	align-self: baseline;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	gap: 1em;
+}
+
+.clima {
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+}
+
+.img-clima {
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+	width: 5vw;
 }
 
 #API-clima {
@@ -622,6 +635,10 @@ iframe {
 
 	}
 
+	.clima {
+		display: none;
+	}
+
 	.abrir-menu,
 	.cerrar-menu {
 		display: block;
@@ -683,5 +700,9 @@ iframe {
 			"form1"
 			"form2"
 			"footer";
+	}
+
+	.contact_form {
+		width: 50%;
 	}
 }

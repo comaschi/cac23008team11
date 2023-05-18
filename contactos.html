@@ -22,11 +22,17 @@
         <img class="logo" src="/assets/Imagenes/5.png" alt="Logo">
         <button id="abrir" class="abrir-menu"><i class="bi bi-list"></i></button>
         <nav class="nav" id="nav">
-            <div id="API-clima">
-                <div class="container">
-                    <div class="temp">°C</div>
-                    <div class="summary">----</div>
-                    <div class="location"></div>
+            <div class="clima">
+                <div>
+                    <img src="https://w7.pngwing.com/pngs/467/69/png-transparent-computer-icons-weather-cloudy-text-hand-cloud.png"
+                        class="img-clima">
+                </div>
+                <div id="API-clima">
+                    <div class="container">
+                        <div class="temp">°C</div>
+                        <div class="summary">----</div>
+                        <div class="location"></div>
+                    </div>
                 </div>
             </div>
             <div>
@@ -38,8 +44,8 @@
                     <li><a href="la_carta.html">La carta</a></li>
                     <li><a href="contactos.html">Contacto - Reservas</a></li>
                 </ul>
+            </div>
         </nav>
-        </div>
     </header>
     <section class="form-1">
         <div id="app">
@@ -199,7 +205,9 @@
     </footer>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="/assets/Js/validacion.js"></script>
- 
+    <script src="/assets/Js/main.js" defer></script>
+    <script src="/assets/Js/api_clima.js"></script>
+    <script src="/assets/Js/componentes.js"></script>
 </body>
 
 </html>
