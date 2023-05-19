@@ -103,8 +103,10 @@ const appFormContacto = createApp({
             this.clase = null
         },
         validacionCorreo() {
-            let validCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-            if (!(validCorreo.test((this.correo).value))) {
+            if ((this.correo).match(
+                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            )) {
+            } else {
                 this.claseCorreo = "nombre-falso"
                 this.correo = "Por favor introduzca una dirección de correo electrónico válida"
             }
@@ -140,8 +142,10 @@ const appFormContacto = createApp({
             this.claseR = null
         },
         validacionCorreoR() {
-            let validCorreo = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-            if (!(validCorreo.test((this.correoR).value))) {
+            if ((this.correoR).match(
+                /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+            )) {
+            } else {
                 this.claseCorreoR = "nombre-falso"
                 this.correoR = "Por favor introduzca una dirección de correo electrónico válida"
             }
