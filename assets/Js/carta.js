@@ -42,7 +42,7 @@ class PlatoList {
         new Plato(
             'Cordero Patagonico',
             'http://www.skorpios.cl/wp-content/uploads/El-cordero-patag%C3%B3nico-de-Skorpios.jpg',
-            'A soft pillow!',
+            'plato típico de la región patagónica de Argentina que se prepara al asador y se sirve con guarniciones como papas y ensalada.',
             7000
         ),
         new Plato(
@@ -55,26 +55,33 @@ class PlatoList {
         new Plato(
             'Bife estilo Campo',
             'https://www.lamejorparrilla.com/wp-content/uploads/2011/02/1470069659_1461178373bife-estilo-campo.png',
-            'Exquisito bife, asado a las brazas con Papas al natutal como guarnicion',
+            'corte de carne de res que se cocina a la parrilla y se sazona con especias y hierbas frescas.',
             5000
         ),
 
         new Plato(
             'Achuras',
             'https://www.lamejorparrilla.com/wp-content/uploads/2011/02/1470069637_1461178564achuras.png',
-            'Exquisito bife, asado a las brazas con Papas al natutal como guarnicion',
+            'Fina seleccion de las mejores achuras, mollejas chinchulines, riñones y morcillas',
             3500
         ),
         new Plato(
-            'Entrana',
+            'Entraña',
             'https://www.lamejorparrilla.com/wp-content/uploads/2017/11/don-julio-6.jpg',
-            'Entraña blabalabla',
+            'Exquisita carne que se despega del costillar del asado. Es muy sabrosa y tierna, por lo general  se prefiere en entradas pero también va excelente como plato principal',
+            5000
+        ),
+
+        new Plato(
+            'Brochette de lomo',
+            'https://i1.wp.com/lacabrera.com.ar/wp-content/uploads/2015/09/brochette-de-lomo-cebolla-y-panceta.jpg',
+            'Un sabor delicioso y una buena opción para comer carne y vegetales.',
             5000
         ),
         new Plato(
             'Chivito',
             'https://www.lamejorparrilla.com/wp-content/uploads/2011/02/1470069323_1461178513chivito.png',
-            'Chivito blabalabla',
+            'Prueba el mejor cabrio asado por expertos',
             6500
         ),
 
@@ -84,11 +91,24 @@ class PlatoList {
             'Chivito blabalabla',
             6500
         ),
+        new Plato(
+            'Provoleta',
+            'https://i1.wp.com/lacabrera.com.ar/wp-content/uploads/2015/09/PROVOLETA.jpg',
+            'Sale antes o durante el asado, según los tiempos del parrillero. Es muy común que se la condimente con especias que le dan un excelente aroma y la convierten en tentadoras para cualquier comensal.',
+            3500
+        ),
+
+        new Plato(
+            'Empanadas',
+            'https://i1.wp.com/lacabrera.com.ar/wp-content/uploads/2010/01/LC_Web_Headers_sept-04.jpg',
+            'Sabrosas y calentitas, no te las podés perder. Son una excelente elección como entrada para que abra el apetito mientras esperamos lo que viene.',
+            3500
+        ),
 
         new Plato(
             'Verduras Asadas',
             'https://www.lamejorparrilla.com/wp-content/uploads/2017/11/don-julio-5.jpg',
-            'Verduras Asadas blabalabla',
+            'Seleccion de las mejores Verduras de estacion asadas a su mejor punto. un deleite',
             2500
         )
     ];
