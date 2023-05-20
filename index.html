@@ -53,6 +53,16 @@
         </article>
     </section>
     <section class="section2">
+        <div><h2  class="tituloGaleria">Galería de imágenes</h2></div>
+        <div class="galeria" id="appgaleria">
+            <button type="button" @click="imagenAnterior" class="btnflecha"><img class="flechaimg"
+                    src="/assets/Imagenes/Flecha izquierda.png" alt=""></button>
+            <div><img v-bind:src="imagen" class="imggaleria" alt=""></div>
+            <button type="button" @click="imagenSiguiente" class="btnflecha"><img class="flechaimg"
+                    src="/assets/Imagenes/Flecha derecha.jpg" alt=""></button>
+        </div>
+    </section>
+    <section class="section3">
         <article>
             <div>
                 <div class="reserva-index">¡Reservá tu mesa!</div>
@@ -61,6 +71,7 @@
             </div>
         </article>
     </section>
+
     <footer>
         <div>
             <div id="footer-div1">Seguinos en nuestras redes</div>
@@ -74,7 +85,9 @@
             <div><a><img id="Whatsapp" src="/assets/Imagenes/Ícono de Whatsapp.png" alt=""></a></div>
         </div>
     </footer>
-    <script src="/assets/Js/main.js" defer></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="/assets/Js/galeria.js"></script>
+    <script src="/assets/Js/main.js"></script>
     <script src="/assets/Js/api_clima.js"></script>
     <!-- <script src="/assets/Js/componentes.js"></script> -->
 </body>

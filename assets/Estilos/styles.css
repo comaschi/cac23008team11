@@ -50,6 +50,7 @@ header {
 	background: linear-gradient(135deg, #996227, #b87f5f);
 	position: sticky;
 	top: 0px;
+	z-index: 2;
 }
 
 .logo {
@@ -166,10 +167,11 @@ footer div div {
 /* Estilos de la página "index.html */
 body {
 	display: grid;
-	grid-template: auto auto auto auto / 1fr 1fr;
+	grid-template: auto auto auto auto auto / 1fr 1fr;
 	grid-template-areas: "header header"
 		"section1 section1"
 		"section2 section2"
+		"section3 section3"
 		"footer footer";
 	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/assets/Imagenes/4K-Restaurant.jpg);
 	background-repeat: repeat;
@@ -181,7 +183,7 @@ body {
 	font-family: 'Courgette', cursive;
 	font-weight: 700;
 	color: #cfca85ec;
-	font-size: 3em;
+	font-size: 3.5vw;
 }
 
 .section1 {
@@ -192,7 +194,7 @@ body {
 .section1>article>p {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
-	font-size: 2.2em;
+	font-size: 2.7vw;
 	color: #cfca85ec;
 	text-align: center;
 	background-color: #552b0785;
@@ -201,12 +203,62 @@ body {
 
 .section2 {
 	grid-area: section2;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tituloGaleria {
+	font-family: 'Courgette', cursive;
+	font-weight: bold;
+	font-size: 2.9vw;
+	color: #cfca85ec;
+	text-align: center;
+	text-decoration: underline;
+	background-color: #552b0785;
+	border-radius: 0.4em;
+	width: auto;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+
+.galeria {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	align-items: center;
+}
+
+.imggaleria {
+	width: 50vw;
+	border-radius: 2em;
+	border: 0.2em solid wheat;
+
+}
+
+.btnflecha {
+	background-color: #bdbb3a;
+	padding: 0.2em;
+	border-radius: 1em;
+	z-index: 1;
+	cursor: pointer;
+}
+
+.flechaimg {
+	width: 2.8vw;
+	filter: brightness(1.1);
+	mix-blend-mode: multiply;
+}
+
+.section3 {
+	grid-area: section3;
 	padding: 4em;
 	display: flex;
 	justify-content: center;
 }
 
-.section2>article>div {
+.section3>article>div {
 	color: wheat;
 	display: flex;
 	flex-direction: column;
@@ -272,7 +324,7 @@ body {
 	border-radius: 0.73vw;
 	padding-top: 2.19vw;
 	padding-bottom: 1.46vw;
-	background-color: #fbfbfb;
+	background-color: #ffffff;
 	padding-left: 2.19vw;
 	padding-right: 2.19vw;
 }
@@ -406,16 +458,16 @@ p {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 2em;
+	font-size: 2.5vw;
 	text-align: center;
 	background-color: #552b07bd;
-	padding: 0.4em;
+	padding: 0.5em;
 	border-radius: 1em;
 }
 
 .section1-dondeestamos>i {
 	margin-left: 1em;
-	font-size: 5em;
+	font-size: 5.2vw;
 }
 
 .section2-dondeestamos {
@@ -439,10 +491,10 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 2em;
+	font-size: 2.5vw;
 	text-align: justify;
 	padding: 0.8em;
-	margin: 1em;
+	margin: 0 0.2em 0 0.2em;
 	background-color: #552b07bd;
 	border-radius: 2em;
 }
@@ -451,7 +503,7 @@ iframe {
 	grid-area: section4;
 	display: grid;
 	justify-content: center;
-	margin: 2em;
+	padding: 3em;
 }
 
 /* Estilos para la página "el_restaurante" */
@@ -480,7 +532,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 1.5em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -496,7 +548,8 @@ iframe {
 
 .section2-elrestaurante img {
 	border-radius: 1em;
-	margin: 1em;
+	margin: 2em;
+	width: 35vw;
 
 }
 
@@ -508,7 +561,8 @@ iframe {
 
 .section3-elrestaurante img {
 	border-radius: 1em;
-	margin: 1em;
+	margin: 2em;
+	width: 35vw;
 
 }
 
@@ -521,7 +575,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 1.5em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -538,7 +592,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 1.5em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -554,7 +608,8 @@ iframe {
 
 .section6-elrestaurante img {
 	border-radius: 1em;
-	margin: 1em;
+	margin: 2em;
+	width: 35vw;
 }
 
 .section7-elrestaurante {
@@ -565,7 +620,8 @@ iframe {
 
 .section7-elrestaurante img {
 	border-radius: 1em;
-	margin: 1em;
+	margin: 2em;
+	width: 35vw;
 
 }
 
@@ -578,7 +634,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 1.5em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -595,7 +651,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 1.5em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -611,7 +667,8 @@ iframe {
 
 .section10-elrestaurante img {
 	border-radius: 1em;
-	margin: 1em;
+	margin: 2em;
+	width: 35vw;
 }
 
 .section11-elrestaurante {
@@ -623,7 +680,7 @@ iframe {
 	font-family: 'Courgette', cursive;
 	font-weight: 400;
 	color: wheat;
-	font-size: 2em;
+	font-size: 2.2vw;
 	text-align: justify;
 	padding: 0.8em;
 	margin: 1em;
@@ -747,6 +804,14 @@ iframe {
 			"footer footer";
 	}
 
+	.body-elrestaurante section article p {
+		font-size: 15px;
+	}
+
+	.body-elrestaurante section img {
+		width: 400px;
+	}
+
 	.body-dondeestamos {
 		grid-template: repeat(auto, 6) / repeat(1fr, 2);
 		grid-template-areas: "header header"
@@ -757,15 +822,21 @@ iframe {
 			"footer footer";
 	}
 
+	.body-dondeestamos section article p {
+		font-size: 20px;
+	}
+
 	.fa-solid {
 		display: none;
 	}
 
+	.section2-dondeestamos {
+		margin-left: 50px;
+	}
+
 	iframe {
-		width: 30em;
-		height: 20em;
-		border-radius: 3em;
-		border: 0.4em groove rgba(187, 187, 32, 0.767);
+		width: 400px;
+		height: 300px;
 	}
 
 	.body-forms {
