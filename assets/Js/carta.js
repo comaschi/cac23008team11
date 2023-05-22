@@ -88,7 +88,7 @@ class PlatoList {
         new Plato(
             'Tabla de Chorizos',
             'https://www.lamejorparrilla.com/wp-content/uploads/2017/11/don-julio-3.jpg',
-            'Chivito blabalabla',
+            'Deléitate con nuestra variedad de chorizos asados a la perfección. Acompañados de salsa, pan y opción de ensalada o papas fritas. ¡Una experiencia parrillera única!',
             6500
         ),
         new Plato(
