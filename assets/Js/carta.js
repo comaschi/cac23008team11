@@ -166,30 +166,32 @@ let margin = 0;
 let slider = document.getElementsByClassName("sliderWidth")[0];
 let itemDisplay = 0;
 let item = document.getElementsByClassName("item");
+let platoWindow = document.querySelector('.plato').clientWidth;
 
-if (screen.width >= 1300) {
+
+if (platoWindow >= 1300) {
     itemDisplay = document.getElementsByClassName("sliderContainer")[0].getAttribute('item-display-xl');
     margin = itemDisplay * 4.0;
 };
 
 
-if (screen.width >= 1042 && screen.width < 1300) {
+if (platoWindow >= 1042 && platoWindow < 1300) {
     itemDisplay = document.getElementsByClassName("sliderContainer")[0].getAttribute('item-display-l');
     margin = itemDisplay * 5;
 };
 
 
-if (screen.width >= 814 && screen.width < 1042) {
+if (platoWindow >= 814 && platoWindow < 1042) {
     itemDisplay = document.getElementsByClassName("sliderContainer")[0].getAttribute('item-display-m');
     margin = itemDisplay * 6.8;
 };
 
-if (screen.width >= 516 && screen.width < 814) {
+if (platoWindow >= 516 && platoWindow < 814) {
     itemDisplay = document.getElementsByClassName("sliderContainer")[0].getAttribute('item-display-s');
     margin = itemDisplay * 10;
 };
 
-if (screen.width < 516) {
+if (platoWindow < 516) {
     itemDisplay = document.getElementsByClassName("sliderContainer")[0].getAttribute('item-display-xs');
     margin = itemDisplay * 20;
 
@@ -199,7 +201,7 @@ let itemLeft = item.length % itemDisplay;
 let itemSlide = Math.floor(item.length / itemDisplay) - 1;
 
 
-console.log(screen.width + 'screen.width');
+console.log(platoWindow + 'platoWindow');
 console.log(itemDisplay + 'itemDisplay');
 console.log(itemLeft + 'itemLeft');
 console.log(itemSlide + 'itemSlide');
@@ -210,7 +212,7 @@ console.log(count + 'count');
 
 
 for (const i of item) {
-    i.style.width = (screen.width / itemDisplay) - margin + "px";
+    i.style.width = (platoWindow / itemDisplay) - margin + "px";
 
 }
 
@@ -220,17 +222,17 @@ leftBtn.addEventListener("click", () => {
     // console.log(itemLeft + 'itemLeft');
     // console.log(itemSlide + 'itemSlide');
     // console.log(margin + 'margin');
-    // console.log(screen.width + 'screen.width');
+    // console.log(platoWindow + 'platoWindow');
     // console.log(inc + 'inc');
     // console.log(count + 'count');
 
     if (inc !== 0) {
         if (inc === itemLeft) {
             inc -= itemLeft;
-            count += (screen.width / itemDisplay) * itemLeft;
+            count += (platoWindow / itemDisplay) * itemLeft;
         } else {
             inc--;
-            count += screen.width;
+            count += platoWindow;
         }
     }
 
@@ -244,10 +246,10 @@ rightBtn.addEventListener("click", () => {
     if (inc !== itemSlide + itemLeft) {
         if (inc === itemSlide) {
             inc += itemLeft;
-            count -= (screen.width / itemDisplay) * itemLeft;
+            count -= (platoWindow / itemDisplay) * itemLeft;
         } else {
             inc++;
-            count -= screen.width;
+            count -= platoWindow;
         }
     }
     slider.style.left = count + "px";
