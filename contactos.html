@@ -66,7 +66,7 @@
                             <label for="nombre">Nombre
                                 <span class="obligatorio">*</span>
                             </label>
-                            <input v-model="nombre" v-bind:class="clase" @keydown.tab="validacionNombre"
+                            <input v-model="nombre" v-bind:class="clase" @keydown.tab="validacionNombre" @blur="validacionContacto"
                                 @click="restablecimientoNombre" @select="restablecimientoNombre" type="text"
                                 name="introducir_nombre" required="obligatorio" placeholder="Escribe tu nombre">
                         </p>
