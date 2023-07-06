@@ -18,6 +18,19 @@ body {
     justify-content: center;
 }
 
+#gridplatos {
+    display: flex;
+    flex-direction: row;
+}
+
+#gridPlatos>div {
+    display: inline-block;
+}
+.card-img-top {
+    width: 17.9em;
+    height: 15em;
+}
+
 h1,
 h2,
 h3,

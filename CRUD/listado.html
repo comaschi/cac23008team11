@@ -53,21 +53,10 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-3">
+    <div class="container text-center mt-3">
         <h1>Listado de platos</h1>
         <div id="gridPlatos">
-        <!-- <table class="table table-dark table table-striped text-center">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Descripción</th>
-                    <th align="right">Precio</th>
-                </tr>
-            </thead>
-            <tbody id="tablaPlatos">
-            </tbody>
-        </table> -->
+        </div>
         <div class="text-center mt-3">
             <a href="index_CRUD.html" class="btn btn-primary">Volver</a>
         </div>
@@ -98,8 +87,8 @@
             .then(function (data) {
                 var tablaPlatos = document.getElementById('gridPlatos');
                 data.forEach(function (plato) {
-                    var fila = document.createElement('div class="card" style="width: 18rem;"');
-                    fila.innerHTML = '<img src="'+plato.imageUrl+'" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">'+plato.title+'</h5><p class="card-text">'+plato.description+'</p><a href="#" class="btn btn-primary">Añadir al pedido</a></div>'
+                    var fila = document.createElement('div');
+                    fila.innerHTML = '<div class="card col-sm-1 col-md-4 col-xl-4 mb-3 mx-3" style="width: 18rem;"><img src="' + plato.imageUrl + '" class="card-img-top" alt="..."><div class="card-body"><h5 class="card-title">' + plato.title + '</h5><p class="card-text"><b>$ ' + plato.precio + '</b></p><button class="btn btn-success" @click="agregarAlPedido(plato)">&nbsp;&nbsp;<b>+</b>&nbsp;&nbsp;</button><button class="btn btn-danger" @click="restarDelPedido(plato)">&nbsp;&nbsp;<b>-</b>&nbsp;&nbsp;</button></div>'
                     tablaPlatos.appendChild(fila);
                 });
             })
@@ -108,4 +97,5 @@
             });
     </script>
 </body>
+
 </html>

@@ -59,24 +59,29 @@
     <form id="formulario">
         <div class="container col-sm-6 col-md-4 col-lg-4 col-xl-">
             <div class="mb-3">
-                <label for="codigo" class="form-label fw-bold">Código</label>
-                <input type="number" class="form-control border-dark-subtle" id="codigo"
+                <label for="platoId" class="form-label fw-bold">Código</label>
+                <input type="number" class="form-control border-dark-subtle" id="platoId"
                     placeholder="Ingrese el código (número) del plato">
             </div>
             <div class="mb-3">
-                <label for="nombre" class="form-label fw-bold">Nombre del plato</label>
-                <textarea class="form-control border-dark-subtle" id="nombre" rows="1"
+                <label for="title" class="form-label fw-bold">Nombre del plato</label>
+                <textarea class="form-control border-dark-subtle" id="title" rows="1"
                     placeholder="Ingrese el nombre del plato"></textarea>
             </div>
             <div class="mb-3">
-                <label for="descripcion" class="form-label fw-bold">Descripción</label>
-                <textarea class="form-control border-dark-subtle" id="descripcion" rows="3"
+                <label for="description" class="form-label fw-bold">Descripción</label>
+                <textarea class="form-control border-dark-subtle" id="description" rows="3"
                     placeholder="Ingrese una breve descripción del plato"></textarea>
             </div>
             <div class="mb-3">
                 <label for="precio" class="form-label fw-bold">Precio</label>
                 <input type="number" class="form-control border-dark-subtle" id="precio"
                     placeholder="Ingrese el precio del plato" step="0.10">
+            </div>
+            <div class="mb-3">
+                <label for="imageUrl" class="form-label fw-bold">URL de imagen</label>
+                <input type="text" class="form-control border-dark-subtle" id="imageUrl"
+                    placeholder="Ingrese la URL de la imagen del plato">
             </div>
             <div class="text-center mt-3">
                 <button class="btn btn-success">Añadir plato</button>
@@ -102,14 +107,15 @@
         const URL = "http://comaschi.pythonanywhere.com/"
         document.getElementById('formulario').addEventListener('submit', function (event) {
             event.preventDefault();
-            var codigo = document.getElementById('codigo').value;
-            var nombre = document.getElementById('nombre').value;
-            var descripcion = document.getElementById('descripcion').value;
+            var platoId = document.getElementById('platoId').value;
+            var title = document.getElementById('title').value;
+            var description = document.getElementById('description').value;
             var precio = document.getElementById('precio').value;
-            var producto = {
-                codigo: codigo,
-                nombre: nombre,
-                descripcion: descripcion,
+            var imageUrl = document.getElementById('precio').value;
+            var plato = {
+                platoId: platoId,
+                title: title,
+                description: description,
                 precio: precio
             };
             console.log(plato)
@@ -128,11 +134,12 @@
                     }
                 })
                 .then(function (data) {
-                    alert('Producto agregado correctamente.');
-                    document.getElementById('codigo').value = "";
-                    document.getElementById('nombre').value = "";
-                    document.getElementById('descripcion').value = "";
+                    alert('Plato agregado correctamente.');
+                    document.getElementById('platoId').value = "";
+                    document.getElementById('title').value = "";
+                    document.getElementById('description').value = "";
                     document.getElementById('precio').value = "";
+                    document.getElementById('imageUrl').value = "";
                 })
                 .catch(function (error) {
                     alert('Error al agregar el plato.');
